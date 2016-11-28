@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HexCell : MonoBehaviour {
-
-    public HexCoordinates coordinates;
-
-    public Color cellColour;
+public class MouseManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +10,6 @@ public class HexCell : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+       Camera.main
 	}
 }

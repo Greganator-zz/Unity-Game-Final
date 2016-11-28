@@ -10,12 +10,16 @@ public class HexMesh : MonoBehaviour {
     List<Vector3> vertices;
     List<int> triangles;
     private int hexagon = 6;
+    MeshCollider meshCollieder;
+    List<Color> terrianColours; 
 
-	// Use this for initialization
-	void Awake () {
+	//imitilises the visable mesh of the grid
+	void Start () {
         GetComponent<MeshFilter>().mesh = hexMesh = new Mesh();
+        meshCollieder = gameObject.AddComponent<MeshCollider>();
         hexMesh.name = "Hex Mesh";
         vertices = new List<Vector3>();
+        terrianColours = new List<Color>();
         triangles = new List<int>();
 	}
 	
@@ -24,6 +28,7 @@ public class HexMesh : MonoBehaviour {
         //Clear old data 
         hexMesh.Clear();
         vertices.Clear();
+        terrianColours.Clear();
         triangles.Clear();
 
         //triangulate all cells individualy
@@ -31,20 +36,32 @@ public class HexMesh : MonoBehaviour {
         {
             Triangulate(cells[i]);
         }
-        //assing generated vertices and trangles to mesh
+        //assing generated vertices and trangles to mesh and their colours
         hexMesh.vertices = vertices.ToArray();
+        hexMesh.colors = terrianColours.ToArray();
         hexMesh.triangles = triangles.ToArray();
         //recaculate mesh normals
         hexMesh.RecalculateNormals();
+        //assign mesh to collider
+        meshCollieder.sharedMesh = hexMesh;
     }
 
+    //generates each whole hexagon
     void Triangulate(HexCell cell)
     {
         Vector3 center = cell.transform.localPosition;
         for (int i = 0; i < hexagon; i++)
         {
             CreateTriangles(center, center + HexMetrics.corners[i], center + HexMetrics.corners[i + 1]);
+            AddTriangleColours(cell.cellColour);
         }
+    }
+
+    void AddTriangleColours (Color colour)
+    {
+        terrianColours.Add(colour);
+        terrianColours.Add(colour);
+        terrianColours.Add(colour);
     }
 
 
