@@ -19,7 +19,7 @@ public class Map : MonoBehaviour {
     public Color grassland = Color.green;
     public Color desert = Color.yellow;
     public Color water = Color.blue;
-    protected Color mountain = Color.gray;
+    protected Color mountain = Color.red;
 
     private float grasslandChance = .60f;
     private float desertChance = .30f;

@@ -10,7 +10,7 @@ public class HexCell : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	if(cellColour == Color.grey)
+	if(cellColour == Color.red)
         {
             Instantiate(hostileSpawner, new Vector3(transform.position.x,transform.position.y,0), new Quaternion(0,0,0,0));
         }
