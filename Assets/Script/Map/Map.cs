@@ -19,12 +19,12 @@ public class Map : MonoBehaviour {
     public Color grassland = Color.green;
     public Color desert = Color.yellow;
     public Color water = Color.blue;
-    public Color mountain = Color.gray;
+    protected Color mountain = Color.gray;
 
     private float grasslandChance = .60f;
     private float desertChance = .30f;
     private float waterChance = .10f;
-    private float mountainChance = .20f;
+    private float mountainChance = .01f;
 
     
 
@@ -50,10 +50,10 @@ public class Map : MonoBehaviour {
     void Update()
     {
         //detect if the mouse clicks on a cell
-        if (Input.GetMouseButton(0))
-        {
-            HandleInput();
-        }
+      //  if (Input.GetMouseButton(0))
+       // {
+        //    HandleInput();
+       // }
     }
 
     //Hadles if the mouse selects one of the hexigon tiles
@@ -104,7 +104,7 @@ public class Map : MonoBehaviour {
         {
             terrain = desert;
         }
-        else if (value > mountainChance)
+        else if (value < mountainChance)
         {
             terrain = mountain;
         }
