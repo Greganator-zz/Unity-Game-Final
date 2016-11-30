@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour {
     //sets velocity of bullet
     void Start()
     {
+        //fires the bullet at specified velocity
         GetComponent<Rigidbody2D>().velocity = transform.up * maxSpeed;
     }
 	

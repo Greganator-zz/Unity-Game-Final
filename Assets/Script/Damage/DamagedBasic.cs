@@ -7,6 +7,7 @@ public class DamagedBasic : MonoBehaviour {
     protected  int originalLayer;
     public float invulnTimer = 0;
     public GameObject explostion;
+    public bool canExplode = true;
 
     void Start()
     {
@@ -24,8 +25,7 @@ public class DamagedBasic : MonoBehaviour {
     {
         //if health reaches zero call die method.
         if (health <= 0)
-        {
-            Instantiate(explostion, transform.position, transform.rotation);
+        {           
             Die();
         }
     }
@@ -33,6 +33,8 @@ public class DamagedBasic : MonoBehaviour {
     //if called destroy gameobject
     void Die()
     {
+        if(canExplode == true)
+        { Instantiate(explostion, transform.position, transform.rotation); }
         Destroy(gameObject);
     }
 }

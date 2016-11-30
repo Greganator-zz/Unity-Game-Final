@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MouseManager : MonoBehaviour {
-
-    //left over from Turn Baised strategy to be used in difrent build
+public class Speed : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,5 +10,6 @@ public class MouseManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
 	}
 }

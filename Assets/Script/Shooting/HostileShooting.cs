@@ -10,8 +10,7 @@ public class HostileShooting : BasicShooting {
         //shoot
         if (fireCooldownTimer <= 0)
         {
-            Debug.Log("Bang");
-            fireCooldownTimer = fireDelay;
+            //shoots
             SpawnBullet();
         }
     }

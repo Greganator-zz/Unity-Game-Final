@@ -11,7 +11,7 @@ public class HexCoordinates {
     public int X { get { return x; } }
     public int Z { get { return z; } }
     
-
+    //hex cordinate initializer
     public HexCoordinates(int x, int z)
     {
         this.x = x;

@@ -6,22 +6,24 @@ public class Map : MonoBehaviour {
     //size of the map in terms of hex tiles
     //not repersntative of the amount of 
     //world space in unity taken up.
-
     public int mapWidth = 6;
     public int mapheight = 6;
 
+    //the cell prefap for each spawned hex
     public HexCell cellPrefab;
 
+    //the mesh of the overall map
     HexMesh hexMesh;
-
+    //array of all the hex cells
     HexCell[] cells;
-
+    //posible colours for each cell
     public Color grassland = Color.green;
     public Color desert = Color.yellow;
     public Color water = Color.blue;
     protected Color mountain = Color.red;
     protected Color lava = Color.green;
 
+    //precent chance for each cell to be the colour
     private float grasslandChance = .60f;
     private float desertChance = .30f;
     private float waterChance = .10f;
@@ -71,6 +73,7 @@ public class Map : MonoBehaviour {
         }
     }
 
+    //tells which cell was touched by the player (no implmented in current game)
     void TouchCell(Vector3 position)
     {
         position = transform.InverseTransformPoint(position);
@@ -94,6 +97,7 @@ public class Map : MonoBehaviour {
         cell.cellColour = randomTerrain();
     }
 
+    //desider of terrain value for what each terrain tile will be
     Color randomTerrain()
     {
         Color terrain = grassland;

@@ -2,13 +2,16 @@
 using System.Collections;
 
 public class HostileSpawner : MonoBehaviour {
-
+    //all types of hostiles
     public GameObject hostilePrefab1;
     public GameObject hostilePrefab2;
     public GameObject hostilePrefab3;
     public GameObject hostilePrefab4;
 
+    //spawn rate
     public float hostileRate = 30;
+
+    //curent time until next hostile
     public float nextHostile = 1;
 	
 	// Update is called once per frame
@@ -20,7 +23,7 @@ public class HostileSpawner : MonoBehaviour {
             nextHostile = hostileRate;
 
             int spawn = Random.Range(0,4);
-
+            //choses the type of hostile randomly to spawn
 
             if (spawn == 0)
             {

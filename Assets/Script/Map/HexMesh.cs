@@ -57,6 +57,7 @@ public class HexMesh : MonoBehaviour {
         }
     }
 
+    //adds the colour of the tile per triangle
     void AddTriangleColours (Color colour)
     {
         terrianColours.Add(colour);

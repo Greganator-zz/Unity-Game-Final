@@ -6,7 +6,6 @@ public class BaseMovement : MonoBehaviour {
     public float maxSpeed = 5f;
     public float rotationSpeed = 180f;
     protected Rigidbody2D rb;
-    public Vector3 bulletOffSet;
     protected float mapSizeY = 0;
     protected float mapSizeX = 0;
     public Map currentMap; 

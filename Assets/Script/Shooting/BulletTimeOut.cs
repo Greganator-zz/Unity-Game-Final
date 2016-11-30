@@ -9,6 +9,8 @@ public class BulletTimeOut : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        //destroys the bullet after specified time
         Destroy(gameObject, timer);
 	}
 
