@@ -3,7 +3,10 @@ using System.Collections;
 
 public class HostileSpawner : MonoBehaviour {
 
-    public GameObject hostilePrefab;
+    public GameObject hostilePrefab1;
+    public GameObject hostilePrefab2;
+    public GameObject hostilePrefab3;
+    public GameObject hostilePrefab4;
 
     public float hostileRate = 30;
     public float nextHostile = 1;
@@ -16,7 +19,25 @@ public class HostileSpawner : MonoBehaviour {
         {
             nextHostile = hostileRate;
 
-            Instantiate(hostilePrefab, transform.position, transform.rotation);
+            int spawn = Random.Range(0,4);
+
+
+            if (spawn == 0)
+            {
+                Instantiate(hostilePrefab1, transform.position, transform.rotation);
+            }
+            else if(spawn == 1)
+            {
+                Instantiate(hostilePrefab2, transform.position, transform.rotation);
+            }
+            else if (spawn == 2)
+            {
+                Instantiate(hostilePrefab3, transform.position, transform.rotation);
+            }
+            else if (spawn == 3)
+            {
+                Instantiate(hostilePrefab4, transform.position, transform.rotation);
+            }
         }
 
 

@@ -20,11 +20,13 @@ public class Map : MonoBehaviour {
     public Color desert = Color.yellow;
     public Color water = Color.blue;
     protected Color mountain = Color.red;
+    protected Color lava = Color.green;
 
     private float grasslandChance = .60f;
     private float desertChance = .30f;
     private float waterChance = .10f;
     private float mountainChance = .01f;
+    private float lavaChance = .06f;
 
     
 
@@ -107,6 +109,10 @@ public class Map : MonoBehaviour {
         else if (value < mountainChance)
         {
             terrain = mountain;
+        }
+        else if (value < lavaChance)
+        {
+            terrain = lava;
         }
         else if (value > waterChance)
         {
