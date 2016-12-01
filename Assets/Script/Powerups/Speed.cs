@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Speed : MonoBehaviour {
+public class Speed : BasicPowerup {
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +12,13 @@ public class Speed : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(IsComponent(collider))
+        {
+            collider.gameObject.GetComponent<PlayerMovement>().maxSpeed += 2;
+            RemovePowerup();
+        }
+    }
 }

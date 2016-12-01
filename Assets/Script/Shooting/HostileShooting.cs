@@ -6,7 +6,8 @@ public class HostileShooting : BasicShooting {
 	
 	// Update is called once per frame
 	void Update () {
-        Cooldown();
+
+         fireCooldownTimer = Cooldown(fireCooldownTimer);
         //shoot
         if (fireCooldownTimer <= 0)
         {

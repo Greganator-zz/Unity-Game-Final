@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RocketPower : MonoBehaviour {
+public class RocketPower : BasicPowerup {
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +12,13 @@ public class RocketPower : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (IsComponent(collider))
+        {
+            collider.gameObject.GetComponent<PlayerShooting>();
+            RemovePowerup();
+        }
+    }
 }

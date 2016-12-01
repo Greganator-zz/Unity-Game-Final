@@ -12,4 +12,27 @@ public class BasicPowerup : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    protected bool IsComponent(Collider2D collider)
+    {
+        if(collider.gameObject.GetComponent<PlayerMovement>() != null)
+        {
+            return true;
+        }
+        else if(collider.gameObject.GetComponent<DamagedPlayer>() != null)
+        {
+            return true;
+        }
+            else if(collider.gameObject.GetComponent<PlayerShooting>() != null)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    protected void RemovePowerup()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -12,9 +12,10 @@ public class BasicShooting : MonoBehaviour {
     //offest of bullet position
     public float offest = 1f;
     //cooldown for bullet time
-    protected void Cooldown()
+    protected float Cooldown(float timmer)
         {
-            fireCooldownTimer -= Time.deltaTime;
+            timmer -= Time.deltaTime;
+              return timmer;
         }
     //spawns bullet and resets fire delay, sets layer to the shooters layer
 	protected void SpawnBullet()
