@@ -20,8 +20,9 @@ public class BasicShooting : MonoBehaviour {
     //spawns bullet and resets fire delay, sets layer to the shooters layer
 	protected void SpawnBullet()
     {
+        float bulletSpread = Random.Range(-.07f,.07f);
         fireCooldownTimer = fireDelay;
-        Bullet bullet = (Bullet)Instantiate(bulletPrefab, transform.position + BulletOffset(), transform.rotation);
+        Bullet bullet = (Bullet)Instantiate(bulletPrefab, transform.position + BulletOffset(), new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z + bulletSpread, transform.rotation.w));
         bullet.gameObject.layer = this.gameObject.layer;
     }
 

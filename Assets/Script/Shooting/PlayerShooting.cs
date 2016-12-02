@@ -35,7 +35,7 @@ public class PlayerShooting : BasicShooting {
     void SpawnMissle()
     {
         missleCooldownTimer = missleDelay;
-        Missle missle = (Missle)Instantiate(misslePrefab, transform.position + BulletOffset(), transform.rotation);
+        Missle missle = (Missle)Instantiate(misslePrefab, transform.position, transform.rotation);
         missle.gameObject.layer = this.gameObject.layer;
     }
 }
