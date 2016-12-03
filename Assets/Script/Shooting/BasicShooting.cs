@@ -24,6 +24,7 @@ public class BasicShooting : MonoBehaviour {
         fireCooldownTimer = fireDelay;
         Bullet bullet = (Bullet)Instantiate(bulletPrefab, transform.position + BulletOffset(), new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z + bulletSpread, transform.rotation.w));
         bullet.gameObject.layer = this.gameObject.layer;
+        bullet.GetComponent<Bullet>().shipSpeed = GetComponent<Rigidbody2D>().transform.up.x;
     }
 
     //sets the offset of the bullets inital spawn

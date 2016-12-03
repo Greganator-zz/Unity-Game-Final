@@ -17,7 +17,7 @@ public class RocketPower : BasicPowerup {
     {
         if (IsComponent(collider))
         {
-            collider.gameObject.GetComponent<PlayerShooting>();
+            collider.gameObject.GetComponent<PlayerShooting>().missileAmmo += 5;
             RemovePowerup();
         }
     }

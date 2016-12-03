@@ -6,7 +6,7 @@ public class PlayerMovement : BaseMovement {
     float shipBoundaryRadius = 0.5f;
     //tracks if camra and ship have reached the edge of the map
     bool edgeOfMap = false;
-   
+    public Vector2 movementBasedOnRotation;
     
 	// Update is called once per frame
 	void Update () {
@@ -20,13 +20,17 @@ public class PlayerMovement : BaseMovement {
         //we store the two floats in a vector2 object
         Vector2 input = new Vector2(0, verticalInput);
 
-        Vector2 movementBasedOnRotation = transform.TransformVector(input);
+        movementBasedOnRotation = transform.TransformVector(input);
 
         rb.velocity = movementBasedOnRotation * maxSpeed;
 
 
         //We rotate the object basied on the left right keys
         rb.angularVelocity = -horizontalInput * rotationSpeed;
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log(rb.velocity);
+        }
 
 
         //Ristrict the player to boundrys

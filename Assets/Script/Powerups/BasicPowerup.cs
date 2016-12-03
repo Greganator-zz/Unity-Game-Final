@@ -19,14 +19,6 @@ public class BasicPowerup : MonoBehaviour {
         {
             return true;
         }
-        else if(collider.gameObject.GetComponent<DamagedPlayer>() != null)
-        {
-            return true;
-        }
-            else if(collider.gameObject.GetComponent<PlayerShooting>() != null)
-        {
-            return true;
-        }
         else
             return false;
     }

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerShooting : BasicShooting {
 
-    protected int missileAmmo = 0;
+    public int missileAmmo = 0;
     public float missleCooldownTimer = 0;
     public float missleDelay = 1;
     public Missle misslePrefab;

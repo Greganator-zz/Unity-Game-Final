@@ -17,7 +17,7 @@ public class Health : BasicPowerup {
     {
         if (IsComponent(collider))
         {
-            collider.gameObject.GetComponent<DamagedPlayer>().health += 10;
+            collider.gameObject.GetComponent<DamagedBasic>().health += 10;
             RemovePowerup();
         }
     }
