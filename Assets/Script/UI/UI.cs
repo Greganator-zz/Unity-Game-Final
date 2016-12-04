@@ -21,9 +21,12 @@ public class UI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //finds all values needed to update the text in the UI that resides withing various components
-	    i_Health = GameObject.FindGameObjectWithTag("Player").GetComponent<DamagedBasic>().health;
-        s_MissleAmmo = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>().missileAmmo.ToString();
-        i_Lives = GameObject.FindGameObjectWithTag("Respawn").GetComponent<PlayerSpawner>().numLives;
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            i_Health = GameObject.FindGameObjectWithTag("Player").GetComponent<DamagedBasic>().health;
+            s_MissleAmmo = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>().missileAmmo.ToString();
+            i_Lives = GameObject.FindGameObjectWithTag("Respawn").GetComponent<PlayerSpawner>().numLives;
+        }
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
         hostiles = GameObject.FindGameObjectsWithTag("Hostile");
         i_HostilesRemain = hostiles.Length;

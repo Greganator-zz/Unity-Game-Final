@@ -9,7 +9,7 @@ public class BasicShooting : MonoBehaviour {
     protected float fireCooldownTimer = 0;
     //shot bullet
     public Bullet bulletPrefab;
-    public GameObject bulletPrefabSound;
+ 
     //offest of bullet position
     public float offest = 1f;
     //cooldown for bullet time
@@ -24,7 +24,6 @@ public class BasicShooting : MonoBehaviour {
         float bulletSpread = Random.Range(-.07f,.07f);
         fireCooldownTimer = fireDelay;
         Bullet bullet = (Bullet)Instantiate(bulletPrefab, transform.position + BulletOffset(), new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z + bulletSpread, transform.rotation.w));
-        Instantiate(bulletPrefabSound);
         bullet.gameObject.layer = this.gameObject.layer;
         bullet.GetComponent<Bullet>().shipSpeed = GetComponent<Rigidbody2D>().transform.up.x;
     }
