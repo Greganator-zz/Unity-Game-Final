@@ -16,9 +16,12 @@ public class DamagedBasic : MonoBehaviour {
     }
 
     //if unit is hit lose one helth
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        health--;
+        if (collider.tag != "Unaffected")
+        {
+            health--;
+        }
     }
 
     void Update()

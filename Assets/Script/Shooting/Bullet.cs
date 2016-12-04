@@ -19,9 +19,4 @@ public class Bullet : MonoBehaviour {
         GetComponent<Rigidbody2D>().velocity = (shipSpeed + maxSpeed) * transform.up ;
         Instantiate(bulletPrefabSound, transform.position, transform.rotation);
     }
-	
-	// Update is called once per frame
-	void Update () {
-	    
-	}
 }
