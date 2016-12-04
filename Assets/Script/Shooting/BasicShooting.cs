@@ -9,6 +9,7 @@ public class BasicShooting : MonoBehaviour {
     protected float fireCooldownTimer = 0;
     //shot bullet
     public Bullet bulletPrefab;
+ 
     //offest of bullet position
     public float offest = 1f;
     //cooldown for bullet time
