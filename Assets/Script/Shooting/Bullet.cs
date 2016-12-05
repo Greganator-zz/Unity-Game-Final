@@ -14,8 +14,6 @@ public class Bullet : MonoBehaviour {
             shipSpeed = 0;
         }
         //fires the bullet at specified velocity
-        Debug.Log(shipSpeed);
-        Debug.Log(transform.up);
         GetComponent<Rigidbody2D>().velocity = (shipSpeed + maxSpeed) * transform.up ;
         Instantiate(bulletPrefabSound, transform.position, transform.rotation);
     }

@@ -7,6 +7,7 @@ public class UI : MonoBehaviour {
     public Text health;
     public Text missleAmmo;
     public Text hostilesRemain;
+    public Text wavesBeaten;
     private GameObject[] spawners;
     private GameObject[] hostiles;
     private int i_Lives;
@@ -33,22 +34,28 @@ public class UI : MonoBehaviour {
         i_HostileSpawnersRemain = spawners.Length;
 
         //Assings the values to the UI text
-        health.text = "Health: " + i_Health + " | Lives: " + i_Lives;
+        health.text = "Health: " + i_Health + "\nLives: " + i_Lives;
         missleAmmo.text = "Missle Ammo: " + s_MissleAmmo;
-        hostilesRemain.text = "Hostiles Remain /n" + "Spawners: " + i_HostileSpawnersRemain
-            + "/n" + "Ships: " + i_HostilesRemain;
+        hostilesRemain.text = "Hostiles Remain \n " + "Spawners: " + i_HostileSpawnersRemain
+            + " \n " + "Ships: " + i_HostilesRemain;
+        wavesBeaten.text =  ("Waves Beaten :" + WavesBeaten.score.ToString());
         EndGame();
     }
 
     void EndGame()
     {
+        //if all health and lives are gone show loss scene and set waves beaten to zero
         if(i_Health <= 0 && i_Lives <= 0)
         {
-            sceneOptions.LoadScene(3);
+            sceneOptions.LoadScene("End Scene (Loss)");
+            WavesBeaten.score = 0;
         }
+        //if all hostiles are defeated show victory and increase Waves beaten by one
         else if(i_HostileSpawnersRemain <= 0 && i_HostilesRemain <= 0)
         {
-            sceneOptions.LoadScene(2);
+            sceneOptions.LoadScene("End Scene (Victory)");
+            WavesBeaten.score += 1;
+
         }
     }
 }

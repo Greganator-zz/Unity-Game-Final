@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuOptions : MonoBehaviour {
 
- public void LoadScene(int SceneToChangeTo)
+ public void LoadScene(string SceneToChangeTo)
     {
         SceneManager.LoadScene(SceneToChangeTo);
     }

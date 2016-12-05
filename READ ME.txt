@@ -1,0 +1,51 @@
+NOTE: PLEASE PLAY ON THE BUILD MODE BECAUSE OF A UNITY ERROR THE MAP DOES NOT SPAWN PROPERLY 
+IN EDITOR MODE.
+
+GALACTIC CONQUEST
+///////////////////////////////////////////////////////////////////
+Galactic Conquest is and endless space shooter with randomly
+Generating maps hostiles and power up types / locations
+//////////////////////////////////////////////////////////////////
+CONTROLS
+W: Move Forward
+S: Move Backwards
+A: Rotate Left
+D: Roatate Right
+MOUSE LEFT BUTTON: Primary Fire (Can be held)
+MOUSE RIGHT: Secondary Fire (Can be Held)
+///////////////////////////////////////////////////////////////////
+HOSTILES
+4 types of hostiles with minor variations in health, speed,
+ fire rate and rotation speed
+1 Spawner type the randomly spawns one of the 4 types 
+every 60 seconds
+/////////////////////////////////////////////////////////////////////
+POWERUP
+3 power ups that increases speed, give ammo for secondary, or 
+Increase health.
+//////////////////////////////////////////////////////////////////////
+WEAPONS
+Primary:
+ Fires a plasma shot that deals 1 damage to anything it hits
+ and can cancel out any hostile plasma shots. Only fired forward
+Secondary:
+Missile (Starts with 0 ammo) needs ammo to fire. Will track the nearest
+Hostile to the missile and when contact is made the missile 
+detonate into a miniature Black hole that sucks everything 
+near it into itself destroying it, active for a limited amount of
+ time. Can be fired in any direction.
+//////////////////////////////////////////////////////////////////////////////////
+UI 
+Shows health and lives in top left corner. Shows missile ammo in top right
+And in top center the number of missions completed from last death. 
+On the bottom right shows number of enemy spawners and ships left. Finaly
+An arrow around your ship that points in the direction of the closest spawner
+/////////////////////////////////////////////////////////////////////////////////////
+4 scenes, a Menu, a Game, a win and a loss scene
+//////////////////////////////////////////////////////////////////////////////////////
+Some audio functionality 
+//////////////////////////////////////////////////////////////////////////////////////
+MAP generation
+All tiles are randomly generated each mission, RED = SPAWNER LOCATION 
+And GREEN = POWERUP location. All other colours have no effect. 
+////////////////////////////////////////////////////////////////////////////////////////

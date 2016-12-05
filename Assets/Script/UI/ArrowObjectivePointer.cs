@@ -18,6 +18,10 @@ public class ArrowObjectivePointer : MonoBehaviour
             //sets the arrow to the direction of the closest spawner
             transform.right = target.position - transform.position;
         }
+        else
+        {
+            gameObject.SetActive(false);
+        }
 
     }
 
