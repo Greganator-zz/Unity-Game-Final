@@ -15,7 +15,7 @@ public class PlayerMovement : BaseMovement {
         Vector3 position = transform.position;
         //we get the input from left/right/up/down or wasd keys
         float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float verticalInput = Mathf.Clamp((Input.GetAxis("Vertical") * 2),-1, 1);
 
         //we store the two floats in a vector2 object
         Vector2 input = new Vector2(0, verticalInput);

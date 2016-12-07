@@ -78,7 +78,6 @@ public class Map : MonoBehaviour {
     {
         position = transform.InverseTransformPoint(position);
         HexCoordinates coordinates = HexCoordinates.SelectedPosition(position);
-        Debug.Log("Touched at: " + coordinates.ToString());
     }
 
 
